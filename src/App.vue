@@ -1,19 +1,24 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="pointer"><Timeline v-bind:timeline="timeline" /></div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Timeline from "./components/Timeline.vue";
+import timeline from "./timeline.json";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    Timeline
+  },
+  data() {
+    return {
+      timeline: timeline
+    };
   }
-}
+};
 </script>
 
 <style>
@@ -24,5 +29,14 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  position: relative;
+  padding-top: 7em;
+}
+
+.pointer {
+  position: absolute;
+  width: 27em;
+  top: 0;
+  left: 30%;
 }
 </style>
